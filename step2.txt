@@ -1,0 +1,42 @@
+nick@pop-os:~$ ghci
+GHCi, version 8.8.4: https://www.haskell.org/ghc/  :? for help
+Prelude> let FirstName = "Nick"
+
+<interactive>:1:5: error:
+    Not in scope: data constructor ‘FirstName’
+Prelude> let firstName = "Nick"
+Prelude> let lastName = "Miller"
+Prelude> let name = firstName ++ lastName
+Prelude> let reversedName = sort name
+
+<interactive>:5:20: error:
+    • Variable not in scope: sort :: [Char] -> t
+    • Perhaps you meant ‘sqrt’ (imported from Prelude)
+Prelude> :m + Data.List
+Prelude Data.List> sort name
+"MNceiikllr"
+Prelude Data.List> reverse name
+"relliMkciN"
+Prelude Data.List> --https://stackoverflow.com/questions/19082953/how-to-sort-a-list-in-haskell-in-command-line-ghci
+Prelude Data.List> sort reverse name
+
+<interactive>:10:1: error:
+    • Couldn't match expected type ‘[Char] -> t’
+                  with actual type ‘[()]’
+    • The function ‘sort’ is applied to two arguments,
+      but its type ‘[()] -> [()]’ has only one
+      In the expression: sort reverse name
+      In an equation for ‘it’: it = sort reverse name
+    • Relevant bindings include it :: t (bound at <interactive>:10:1)
+
+<interactive>:10:6: error:
+    • Couldn't match expected type ‘[()]’
+                  with actual type ‘[a0] -> [a0]’
+    • Probable cause: ‘reverse’ is applied to too few arguments
+      In the first argument of ‘sort’, namely ‘reverse’
+      In the expression: sort reverse name
+      In an equation for ‘it’: it = sort reverse name
+Prelude Data.List> let sorted = sort name
+Prelude Data.List> reverse sorted
+"rllkiiecNM"
+Prelude Data.List> 
