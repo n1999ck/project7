@@ -21,7 +21,9 @@ What I disliked about Haskell:
 2. Importing was confusing
 3. Weirdly bad ergonomics for typing, lots of stretching for uncommon keys like | or `
 
-Overall I highly prefer Clojure
+Overall I highly prefer Clojure.
+
+Note: I did only easy exercises for Haskell because I'm incredibly bad at these problems. For Clojure, I completed medium exercise Difference of Squares and easy exercises Reverse String and Two Fer. I spent a few hours trying medium exercises Luhn, Allergies, and Largest Series Product, but like I said, I'm just not good at these.
 
 References:
 https://hackage.haskell.org/package/text-2.1.1/docs/Data-Text.html and other pages on this site
